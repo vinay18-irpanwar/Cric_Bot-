@@ -7,7 +7,8 @@ load_dotenv()  # Load the .env file
 api_key = os.getenv("GOOGLE_API_KEY")
 
 from langchain_community.document_loaders import PyMuPDFLoader
-from langchain.text_splitter import RecursiveCharacterTextSplitter
+from langchain_text_splitters import RecursiveCharacterTextSplitter
+
 from langchain_google_genai import GoogleGenerativeAIEmbeddings, ChatGoogleGenerativeAI
 from langchain_community.vectorstores import FAISS
 from langchain_core.documents import Document
@@ -107,3 +108,4 @@ if uploaded_file and api_key:
 
 else:
     st.info("⬆️ Upload a PDF & Enter API Key to begin.")
+
